@@ -26,5 +26,7 @@ after_initialize do
   )
 end
 
-register_asset "assets/javascripts/discourse/templates/components/user-trust-level-progress.hbs"
-register_asset "assets/javascripts/discourse/components/user-trust-level-progress.js"
+# We have removed the following lines because they are deprecated and cause errors:
+# register_asset "assets/javascripts/discourse/templates/components/user-trust-level-progress.hbs"
+# register_asset "assets/javascripts/discourse/components/user-trust-level-progress.js"
+# The build system will now automatically include these assets.
