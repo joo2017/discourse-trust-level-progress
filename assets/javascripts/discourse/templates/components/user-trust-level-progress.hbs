@@ -1,0 +1,35 @@
+{{#if this.isLoading}}
+  <div class="loading-spinner"></div>
+{{else if this.progressData}}
+  <div class="user-trust-level-progress-widget" style="margin-top: 2em; padding: 1em; border: 1px solid var(--primary-low);">
+    <h3 style="margin-bottom: 0.5em;">
+      {{i18n "trust_level_progress.nav_item_name"}}
+    </h3>
+
+    {{#if this.progressData.complete}}
+      <p>{{this.progressData.message}}</p>
+    {{else}}
+      <p>
+        Current Level: <strong>{{this.progressData.current_level}}</strong> |
+        Next Level: <strong>{{this.progressData.next_level}}</strong>
+      </p>
+
+      {{#if this.progressData.all_met}}
+        <p class="all-met-message">Congratulations! You have met all requirements and will be promoted soon.</p>
+      {{else}}
+        <h4 style="margin-top: 1em; margin-bottom: 0.5em;">Requirements to reach next level:</h4>
+        <ul class="progress-list unmet-requirements" style="list-style: none; padding-left: 0;">
+          {{#each this.progressData.unmet_requirements as |req|}}
+            <li style="margin-bottom: 0.5em;">
+              <span class="requirement-name">{{req.name}}: </span>
+              <span class="requirement-progress">
+                <strong>{{req.current}} / {{req.required}}</strong>
+              </span>
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+
+    {{/if}}
+  </div>
+{{/if}}
