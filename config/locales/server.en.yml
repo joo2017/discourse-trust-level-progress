@@ -1,0 +1,13 @@
+en:
+  trust_level_progress:
+    nav_item_name: "Progress"
+    highest_level: "You have reached the highest trust level!"
+    tl1:
+      topics_entered: "Topics viewed"
+      posts_read: "Posts read"
+      time_spent: "Reading time (minutes)"
+    tl2:
+      days_visited: "Days visited"
+      likes_given: "Likes given"
+      likes_received: "Likes received"
+      topics_replied_to: "Topics replied to"
